@@ -6,9 +6,22 @@
   </script>
 <% end %>
 
-<div class="contrainer-shops">
-  <h1 class="title">Shops</h1>
-  <div id="map" class="map"></div>
+<div class="contrainer">
+  <div class="contrainer-shops">
+    <h1 class="title">BEAUTY AND WELLNESS SERVICES</h1>
+    <nav class="navbar navbar-light bg-light">
+      <%= link_to 'All', 'javascript:void(0)', onclick: "getShop()" %>
+      <%= link_to 'Nails', 'javascript:void(0)', onclick: "getShopNails()" %>
+      <%= link_to 'Spa and massage', 'javascript:void(0)', onclick: "getShopSpas()" %>
+      <%= link_to 'Hair removal', 'javascript:void(0)', onclick: "getShopHairs()" %>
+      <%= link_to 'BarberShop', 'javascript:void(0)', onclick: "getShopBarbers()" %>
+    </nav>
+    <div id="map" class="map"></div>
+    <div id="map-nails" class="map"></div>
+    <div id="map-hairs" class="map"></div>
+    <div id="map-barbers" class="map"></div>
+    <div id="map-spas" class="map"></div>
+  </div>
 </div>
 
 

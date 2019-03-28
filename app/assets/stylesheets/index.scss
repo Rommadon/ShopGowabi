@@ -1,0 +1,27 @@
+.contrainer-shops {
+  width: 100%;
+  padding: 50px 0;
+
+  .title {
+    text-align: center;
+    font-size: 35px;
+  }
+
+  .map {
+    margin: 0 auto;
+    width: 1000px;
+    height: 700px;
+  }
+
+  .navbar {
+    border-radius: 10px;
+    width: 1000px;
+    margin: 30px auto 10px auto;
+
+    a {
+      text-align: center;
+      width: 20%;
+      color: black;
+    }
+  }
+}

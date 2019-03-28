@@ -23,10 +23,10 @@ function initMap(shops) {
   var infowindow = new google.maps.InfoWindow();
 
   var marker, i;
-  var icon_nail  = "/assets/icons/nail.png";
-  var icon_hair  = "/assets/icons/hair.png";
-  var icon_spa = "/assets/icons/spa.png";
-  var icon_barbershop  = "/assets/icons/barbershop.png";
+  var icon_nail  = "https://i.imgur.com/6cuiiQi.png";
+  var icon_hair  = "https://i.imgur.com/T80DFGl.png";
+  var icon_spa = "https://i.imgur.com/tK8JziJ.png";
+  var icon_barbershop  = "https://i.imgur.com/X4j6rYg.png";
 
   for (i = 0; i < shops.SpaAndMassage.length; i++) {
     marker = new google.maps.Marker({
@@ -115,8 +115,7 @@ function initMapNails(shops) {
   var infowindow = new google.maps.InfoWindow();
 
   var marker, i;
-  var icon_nail  = "/assets/icons/nail.png";
-
+  var icon_nail  = "https://i.imgur.com/6cuiiQi.png";
 
   for (i = 0; i < shops.Nails.length; i++) {
     marker = new google.maps.Marker({
@@ -160,8 +159,7 @@ function initMapSpas(shops) {
   var infowindow = new google.maps.InfoWindow();
 
   var marker, i;
-  var icon_spa = "/assets/icons/spa.png";
-
+  var icon_spa = "https://i.imgur.com/tK8JziJ.png";
 
   for (i = 0; i < shops.SpaAndMassage.length; i++) {
     marker = new google.maps.Marker({
@@ -204,7 +202,7 @@ function initMapHairs(shops) {
   var infowindow = new google.maps.InfoWindow();
 
   var marker, i;
-  var icon_hair  = "/assets/icons/hair.png";
+  var icon_hair  = "https://i.imgur.com/T80DFGl.png";
 
   for (i = 0; i < shops.HairRemoval.length; i++) {
     marker = new google.maps.Marker({
@@ -248,7 +246,7 @@ function initMapBarbers(shops) {
   var infowindow = new google.maps.InfoWindow();
 
   var marker, i;
-  var icon_barbershop  = "/assets/icons/barbershop.png";
+  var icon_barbershop  = "https://i.imgur.com/X4j6rYg.png";
 
   for (i = 0; i < shops.Barbershop.length; i++) {
     marker = new google.maps.Marker({

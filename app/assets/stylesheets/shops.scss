@@ -1,4 +1,14 @@
-#map {
-  width: 600px;
-  height: 400px;
+.contrainer-shops {
+  width: 100%;
+
+  .title {
+    text-align: center;
+    font-size: 35px;
+  }
+
+  .map {
+    margin: 0 auto;
+    width: 1000px;
+    height: 700px;
+  }
 }

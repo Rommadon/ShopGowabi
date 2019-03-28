@@ -1,10 +1,22 @@
-function initMap(shops_spa, shops_nails, shops_hair, shops_barber) {
+function getShop() {
+  axios.get('/api/v1/shops')
+    .then(function (response) {
+      console.log("a", response.data)
+      return response.data
+    }).then(initMap)
+    .catch(function (error) {
+      console.log(error);
+  });
+}
+
+function initMap(shops) {
+  console.log(shops)
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 20,
-    center: new google.maps.LatLng(13.7563, 100.5018),
+    zoom: 14,
+    center: new google.maps.LatLng(13.8000, 100.5250),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
-
+  
   var infowindow = new google.maps.InfoWindow();
 
   var marker, i;
@@ -13,62 +25,62 @@ function initMap(shops_spa, shops_nails, shops_hair, shops_barber) {
   var icon_spa = "/assets/icons/spa.png";
   var icon_barbershop  = "/assets/icons/barbershop.png";
 
-  for (i = 0; i < shops_spa.length; i++) {
+  for (i = 0; i < shops.SpaAndMassage.length; i++) {
     marker = new google.maps.Marker({
-      position: new google.maps.LatLng(shops_spa[i].latitude, shops_spa[i].longitude),
+      position: new google.maps.LatLng(shops.SpaAndMassage[i].latitude, shops.SpaAndMassage[i].longitude),
       map: map,
       icon: icon_spa
     });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
       return function() {
-        infowindow.setContent(shops_spa[i].name);
+        infowindow.setContent("Spa and massage : " + shops.SpaAndMassage[i].name);
         infowindow.open(map, marker);
       }
     })(marker, i));
   }
 
-  for (i = 0; i < shops_nails.length; i++) {
+  for (i = 0; i < shops.Nails.length; i++) {
     marker = new google.maps.Marker({
-      position: new google.maps.LatLng(shops_nails[i].latitude, shops_nails[i].longitude),
+      position: new google.maps.LatLng(shops.Nails[i].latitude, shops.Nails[i].longitude),
       map: map,
       icon: icon_nail
     });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
       return function() {
-        infowindow.setContent(shops_nails[i].name);
+        infowindow.setContent("Nails : " + shops.Nails[i].name);
         infowindow.open(map, marker);
       }
     })(marker, i));
   }
 
-  for (i = 0; i < shops_hair.length; i++) {
+  for (i = 0; i < shops.HairRemoval.length; i++) {
     marker = new google.maps.Marker({
-      position: new google.maps.LatLng(shops_hair[i].latitude, shops_hair[i].longitude),
+      position: new google.maps.LatLng(shops.HairRemoval[i].latitude, shops.HairRemoval[i].longitude),
       map: map,
       icon: icon_hair
     });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
       return function() {
-        infowindow.setContent(shops_hair[i].name);
+        infowindow.setContent("Hair removal : " + shops.HairRemoval[i].name);
         infowindow.open(map, marker);
       }
     })(marker, i));
   }
 
-  for (i = 0; i < shops_barber.length; i++) {
-    console.log(shops_barber[i].name)
+  for (i = 0; i < shops.BarberShop.length; i++) {
+    console.log(shops.BarberShop[i].name)
     marker = new google.maps.Marker({
-      position: new google.maps.LatLng(shops_barber[i].latitude, shops_barber[i].longitude),
+      position: new google.maps.LatLng(shops.BarberShop[i].latitude, shops.BarberShop[i].longitude),
       map: map,
       icon: icon_barbershop
     });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
       return function() {
-        infowindow.setContent(shops_barber[i].name);
+        infowindow.setContent("Barbershop : " + shops.BarberShop[i].name);
         infowindow.open(map, marker);
       }
     })(marker, i));

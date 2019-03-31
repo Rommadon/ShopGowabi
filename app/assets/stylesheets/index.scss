@@ -9,19 +9,47 @@
 
   .map {
     margin: 0 auto;
-    width: 1000px;
+    max-width: 1000px;
     height: 700px;
   }
 
   .navbar {
     border-radius: 10px;
-    width: 1000px;
+    max-width: 1000px;
     margin: 30px auto 10px auto;
 
     a {
       text-align: center;
       width: 20%;
       color: black;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .contrainer-shops {
+
+    padding: 25px 0;
+
+    .title {
+      font-size: 20px;
+      padding-bottom: 10px;
+    }
+
+    .navbar {
+      margin: 10px;
+
+      a {
+        font-size: 10px;
+      }
+    }
+
+    .container-map {
+      margin: 0 10px;
+
+      .map {
+        max-height: 425px;
+      }
     }
   }
 }
